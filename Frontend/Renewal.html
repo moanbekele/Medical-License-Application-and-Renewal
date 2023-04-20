@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
-    <link rel="stylesheet" href="assets/Renewal.css" />
+    <link rel="stylesheet" href="Renewal.css" />
   </head>
   <body>
     <section class="container">
@@ -42,24 +42,36 @@
             <input type="date" placeholder="Enter birth date" required />
           </div>
         </div>
-        <div class="gender-box">
-          <h3>Gender</h3>
-          <div class="gender-option">
-            <div class="gender">
-              <input type="radio" id="check-male" name="gender" checked />
-              <label for="check-male">male</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-female" name="gender" />
-              <label for="check-female">Female</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-other" name="gender" />
-              <label for="check-other">prefer not to say</label>
-            </div>
-        <div class="input-box previous license">
+        
+            
           <label>Upload</label>
-          
+          <div class="column">
+            <div class="input-box">
+                <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*">
+            </div>
+            <div class="input-box">
+                <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*">
+            </div>
+            <div class="input-box">
+                <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*">
+            </div>
+         </div>
+         <div class="gender-box">
+            <h3>Gender</h3>
+            <div class="gender-option">
+              <div class="gender">
+                <input type="radio" id="check-male" name="gender" checked />
+                <label for="check-male">male</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-female" name="gender" />
+                <label for="check-female">Female</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-other" name="gender" />
+                <label for="check-other">prefer not to say</label>
+              </div>
+          <div>
         </div>
         <button>Submmit</button>
       </form>
