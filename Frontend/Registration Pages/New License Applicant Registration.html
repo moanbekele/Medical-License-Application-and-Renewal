@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
-    <link rel="stylesheet" href="assets/regainLost.css" />
+    <link rel="stylesheet" href="assets/Renewal.css" />
   </head>
   <body>
     <section class="container">
-      <header>Regain lost license Form</header>
+      <header>New License Application Form</header>
       <form action="#" class="form">
         <div class="column">
           <div class="input-box">
@@ -57,27 +57,56 @@
         </div>
         <div class="column">
           <div class="input-box">
-            <label> Health profession </label>
-            <input name="profession" list="health-professions" placeholder="--Select health profession--" required>
-            <datalist id="health-professions">
-              <option value="Nurse">
-              <option value="Health Officer"> 
-              <option value="Physiotherapist"> 
-              <option value="Doctor"> 
-              <option value="Pharmacist"> 
-              <option value="Midwife"> 
-              <option value="Radiology Technician"> 
-              <option value="Lab Technician"> 
-              <option value="Psychiatry Nurse"> 
-            </datalist>
+            <label>Graduating University</label>
+            <input type="text" placeholder="Enter University"> 
           </div>
           <div class="input-box">
-            <label>Date license was issued</label>
-            <input type="date" name="date-of-issue" placeholder="mm/dd/yyyy">
+            <label>Year of graduation</label>
+            <input type="number" name="date-of-issue" placeholder="yyyy">
           </div>
         </div>
+        <div class="input-box">
+          <label> Health profession </label>
+          <input name="profession" list="health-professions" placeholder="--Select health profession--" required>
+          <datalist id="health-professions">
+            <option value="Nurse">
+            <option value="Health Officer"> 
+            <option value="Physiotherapist"> 
+            <option value="Doctor"> 
+            <option value="Pharmacist"> 
+            <option value="Midwife"> 
+            <option value="Radiology Technician"> 
+            <option value="Lab Technician"> 
+            <option value="Psychiatry Nurse"> 
+          </datalist>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label> Upload 8th grade ministry</label>
+            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*">
+          </div>
+          <div class="input-box">
+            <label> Upload 10th grade matric</label>
+            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label> Upload 12th grade matric</label>
+            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+          </div>
+          <div class="input-box">
+            <label> Upload Degree certificate</label>
+            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+          </div>
+       </div>
+       <div class="input-box">
+        <label> Upload Recent Photo</label>
+        <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+       </div>
         <button>Submit</button>
       </form>
     </section>
   </body>
 </html>
+
