@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="assets/apply.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">welcome to oromia health office</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First name</span>
+            <input type="text" placeholder="Enter your First name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">last name</span>
+            <input type="text" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+                
+          
+          <div class="input-box">
+            <span class="details">Licence Type :</span>
+            <select name="cars" id="cars">
+              <option value="volvo">health officer</option>
+              <option value="saab">H.R</option>
+              <option value="opel">pharmacist</option>
+              <option value="audi">NURSE</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Health Field :</span>
+                <select name="cars" id="cars">
+                  <option value="volvo">Doctor</option>
+                  <option value="saab">Nurse</option>
+                  <option value="opel">Drugist</option>
+                  <option value="audi">Health officer</option>
+                </select>
+              </div>
+
+            <div>
+              <div id="img-preview" class="boss"></div>
+              <input type="file"  id="choose-file_1" name="choose-file_1" accept="image/*" />
+              <label for="choose-file_1">National Examination Certificate</label>
+            </div>
+         
+          
+            <div>
+              <div id="img-preview_2" class="boss"></div>
+              <input type="file"  id="choose-file_2" name="choose-file_2" accept="image/*" />
+              <label for="choose-file_2">Deploma File</label>
+            </div>
+
+            <div>
+              <div id="img-preview_3" class="boss"></div>
+              <input type="file"  id="choose-file_3" name="choose-file_2" accept="image/*" />
+              <label for="choose-file_3">Degree File</label>
+            </div>
+          </div>
+        
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+
+        
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script  src="assets/apply.js"></script>
+</body>
+</html>
