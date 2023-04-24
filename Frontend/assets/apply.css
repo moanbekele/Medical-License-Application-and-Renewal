@@ -180,6 +180,7 @@ img{
   
 }
 [type="file"] + label {
+  font-size: 10px;
   font-family: sans-serif;
   background: #8391d3;
   padding: 10px 30px;
