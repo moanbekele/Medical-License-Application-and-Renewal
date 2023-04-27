@@ -4,7 +4,7 @@ from django.shortcuts import render
 # !!!---------------- Applicants -------------------------------------------------!!!
 
 #============================
-#== Home Page =============
+#== Home Page ===============
 #============================
 def index(request):
     dynamic_stuff = "Whore Iceland"
