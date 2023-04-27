@@ -16,11 +16,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MLAR_app.views import * #!!! Import views file
+from MLAR_app.views import * #!!! Import views 
 from django.conf import settings  #!!! Import settings
 from django.conf.urls.static import static #!!! Import static files 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index, name='home'), #!!! Add index function to path
+    # !!! -------------- APPLICANTS ------------------------------------------------
+    path('',index, name='home'), # Add index function to path
+    # ---- Registration ------
+    path('register/',register_new_applicants, name='register'),
+    path('lost-License/',register_lost_applicants, name='register'),
+    path('renewal/',register_renewal_applicants, name='register'),
+    # ---- Success -----------
+    path('registration-success/',registration_success, name='register'),
+    path('lost-License-success/',lost_License_success, name='register'),
+    path('renewal-success/',renewal_success, name='register'),
+
+    # !!! -------------- DASHBOARD ------------------------------------------------
+    path('dashboard/',dashboard_home, name='home'),
+    path('dashboard/accepted',dashboard_accepted, name='home'),
+    path('dashboard/denied',dashboard_denied, name='home'),
+    path('dashboard/notify',dashboard_notify, name='home'),
+    path('dashboard/verify',dashboard_verify, name='home'),
+    # ---- Authentication -----------
+    path('login',login, name='home'),
+    path('register',register, name='home'),
+    path('forgot-password',forgot_password, name='home'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static files
