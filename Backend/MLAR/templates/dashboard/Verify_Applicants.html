@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html
@@ -20,7 +21,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{% static 'Dashboard_assets/assets/img/favicon/favicon.ico' %}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,18 +32,18 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/vendor/fonts/boxicons.css' %}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/css/demo.css' %}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
 
     <!--==================================  CUSTOM  ==============================================================================================================================-->
-    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="{% static 'Dashboard_assets/assets/css/custom.css' %}" />
     <!--================================== CUSTOM  =========================================================================================================================================================-->
     
     
@@ -51,9 +52,9 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="assets/vendor/js/helpers.js"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/js/helpers.js' %}"></script>
 
-    <script src="assets/js/config.js"></script>
+    <script src="{% static 'Dashboard_assets/assets/js/config.js' %}"></script>
 
 
   </head>
@@ -135,7 +136,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="index.html" class="menu-link">
+              <a href="{% url 'dashboard' %}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -149,28 +150,28 @@
 
             <!-- Custom -->
             <li class="menu-item active">
-              <a href="Verify_Applicants.html" class="menu-link">
+              <a href="{% url 'verify' %}" class="menu-link">
                 <i class='menu-icon tf-icons bx bxs-user-pin'></i>
                 <div data-i18n="Analytics">Verification</div>
               </a>
             </li>
 
             <li class="menu-item">
-              <a href="Notify_Applicants.html" class="menu-link">
+              <a href="{% url 'notify' %}" class="menu-link">
                 <i class='menu-icon tf-icons bx bxs-bell'></i>
                 <div data-i18n="Basic">Notify Applicants</div>
               </a>
             </li>
 
             <li class="menu-item">
-              <a href="Accepted_Applicants.html" class="menu-link">
+              <a href="{% url 'accepted' %}" class="menu-link">
                 <i class='menu-icon tf-icons bx bxs-user-check'></i>
                 <div data-i18n="Basic">Accepted Applicants</div>
               </a>
             </li>
 
             <li class="menu-item">
-              <a href="Denied_Applicants.html" class="menu-link">
+              <a href="{% url 'denied' %}" class="menu-link">
                 <i class='menu-icon tf-icons bx bxs-user-x'></i>
                 <div data-i18n="Basic">Denied Applicants</div>
               </a>
@@ -185,7 +186,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Authentication</span></li>
             <!-- Register -->
             <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
+              <a href="{% url 'signup' %}" class="menu-link">
                 <i class='menu-icon tf-icons bx bxs-user-plus'></i>
                 <div data-i18n="Basic">Register Employee</div>
               </a>
@@ -375,12 +376,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -388,12 +389,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -502,7 +503,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}" alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -511,7 +512,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}" alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -520,7 +521,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}" alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -594,12 +595,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -607,12 +608,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -707,7 +708,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -716,7 +717,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -725,7 +726,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -795,12 +796,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -808,12 +809,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -908,7 +909,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -917,7 +918,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -926,7 +927,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -1034,12 +1035,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1047,12 +1048,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1147,7 +1148,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1156,7 +1157,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1165,7 +1166,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -1239,12 +1240,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1252,12 +1253,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1352,7 +1353,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1361,7 +1362,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1370,7 +1371,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -1440,12 +1441,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/CER.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/CER.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/CER1.png"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/CER1.png' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1453,12 +1454,12 @@
                                           <div class="image-slider">
                                               <div >
                                                   <img class="maboy"src=
-                                                          "assets/img/avatars/Deploma.jpg"
+                                                          "{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"
                                                           alt="GFG_Image"/>
                                               </div>
                                              
                                                   <img class="maboy" src=
-                                                            "assets/img/avatars/Degree.jpg"
+                                                            "{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"
                                                           alt="GFG_Image"/>
                                           </div>
                                         </div>
@@ -1553,7 +1554,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Diploma"
                             >
-                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="assets/img/avatars/Degree.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/Degree.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Degree.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1562,7 +1563,7 @@
                               class="avatar avatar-xs pull-up"
                               title="Degree"
                             >
-                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="assets/img/avatars/Deploma.jpg" alt="Avatar" class="rounded-circle" /></a>
+                              <a href="assets/img/avatars/Deploma.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/Deploma.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                             <li
                               data-bs-toggle="tooltip"
@@ -1571,7 +1572,7 @@
                               class="avatar avatar-xs pull-up"
                               title="National-Examination-Certificate"
                             >
-                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="assets/img/avatars/NSC.jpg" alt="Avatar" class="rounded-circle" /></a>
+                            <a href="assets/img/avatars/NSC.jpg" target="_blank"><img src="{% static 'Dashboard_assets/assets/img/avatars/NSC.jpg' %}"    alt="Avatar" class="rounded-circle" /></a>
                             </li>
                           </ul>
                         </td>
@@ -1688,18 +1689,18 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="assets/vendor/libs/popper/popper.js"></script>
-    <script src="assets/vendor/js/bootstrap.js"></script>
-    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/libs/jquery/jquery.js ' %}"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/libs/popper/popper.js ' %}"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/js/bootstrap.js ' %}"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js ' %}"></script>
 
-    <script src="assets/vendor/js/menu.js"></script>
+    <script src="{% static 'Dashboard_assets/assets/vendor/js/menu.js ' %}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'Dashboard_assets/assets/js/main.js ' %}"></script>
 
    
 

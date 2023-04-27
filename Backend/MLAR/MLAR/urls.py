@@ -26,21 +26,21 @@ urlpatterns = [
     path('',index, name='home'), # Add index function to path
     # ---- Registration ------
     path('register/',register_new_applicants, name='register'),
-    path('lost-License/',register_lost_applicants, name='register'),
-    path('renewal/',register_renewal_applicants, name='register'),
+    path('lost-License/',register_lost_applicants, name='lost'),
+    path('renewal/',register_renewal_applicants, name='renewal'),
     # ---- Success -----------
-    path('registration-success/',registration_success, name='register'),
-    path('lost-License-success/',lost_License_success, name='register'),
-    path('renewal-success/',renewal_success, name='register'),
+    path('registration-success/',registration_success, name='reg_success'),
+    path('lost-License-success/',lost_License_success, name='lost_success'),
+    path('renewal-success/',renewal_success, name='renew_success'),
 
     # !!! -------------- DASHBOARD ------------------------------------------------
-    path('dashboard/',dashboard_home, name='home'),
-    path('dashboard/accepted',dashboard_accepted, name='home'),
-    path('dashboard/denied',dashboard_denied, name='home'),
-    path('dashboard/notify',dashboard_notify, name='home'),
-    path('dashboard/verify',dashboard_verify, name='home'),
+    path('dashboard/',dashboard_home, name='dashboard'),
+    path('dashboard/accepted',dashboard_accepted, name='accepted'),
+    path('dashboard/denied',dashboard_denied, name='denied'),
+    path('dashboard/notify',dashboard_notify, name='notify'),
+    path('dashboard/verify',dashboard_verify, name='verify'),
     # ---- Authentication -----------
-    path('login',login, name='home'),
-    path('register',register, name='home'),
-    path('forgot-password',forgot_password, name='home'),
+    path('login/',login, name='login'),
+    path('signup/',register, name='signup'),
+    path('forgot-password/',forgot_password, name='forgot_pass'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static files

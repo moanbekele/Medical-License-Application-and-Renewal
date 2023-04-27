@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Home page</title>
-  <link rel="stylesheet" href="assets/Landing.css"> 
-<link rel="stylesheet" href="assets/Landing_more.css">
+  <link rel="stylesheet" href="{% static 'Applicants_assets/Landing.css' %}"> 
+<link rel="stylesheet" href="{% static 'Applicants_assets/Landing_more.css' %}">
 
 </head>
 <body>
@@ -12,7 +13,7 @@
 <section class="page-contain">
 
   <!-- Card Begine -->
-  <a href="Registration_Pages/New_License_Applicant_Registration.html" class="data-card">
+  <a href="{% url 'register' %}" class="data-card">
     <h3>Apply For Licence</h3>
     <h4>New Licence</h4>
     <p>Apply for a new licence From OHO</p>
@@ -26,7 +27,7 @@
   <!-- Card End -->
 
   <!-- Card Begine -->
-  <a href="Registration_Pages/License_Renewal_Applicant_Registration.html" class="data-card">
+  <a href="{% url 'renewal' %}" class="data-card">
     <h3>Licence Renewal</h3>
     <h4>Renewal</h4>
     <p>Renew expired licence or soon to be expired licence</p>
@@ -40,7 +41,7 @@
   <!-- Card End -->
 
   <!-- Card Begine -->
-  <a href="Registration_Pages/Lost_License_Applicant_Registration.html" class="data-card">
+  <a href="{% url 'lost' %}" class="data-card">
     <h3>Recover Lost Licence</h3>
     <h4>RECOVER</h4>
     <p>Regain or recover a lost licence from OHO.</p>

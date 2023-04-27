@@ -117,7 +117,7 @@ def dashboard_denied(request):
     context = {    # Add dynamic stuff here
         'dynamic_stuff':dynamic_stuff,
     }
-    return render(request,"Dashboard/Denied_Applicants", context)
+    return render(request,"Dashboard/Denied_Applicants.html", context)
 
 #================================
 #== Notify Applicants ===========
@@ -127,7 +127,7 @@ def dashboard_notify(request):
     context = {    # Add dynamic stuff here
         'dynamic_stuff':dynamic_stuff,
     }
-    return render(request,"Dashboard/Notify_Applicants", context)
+    return render(request,"Dashboard/Notify_Applicants.html", context)
 
 #================================
 #== Verify Applicants ===========
