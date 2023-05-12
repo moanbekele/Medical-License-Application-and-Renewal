@@ -12,3 +12,5 @@ admin.site.register(Regain_lost_license)
 admin.site.register(Employee)
 admin.site.register(Validate)
 
+class First_License_ApplicationAdmin(admin.ModelAdmin):
+    autocomplete_fields = ['applicant']

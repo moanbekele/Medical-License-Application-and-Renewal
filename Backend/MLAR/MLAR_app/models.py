@@ -26,6 +26,8 @@ class Applicant(models.Model):
   
 
 
+
+
 #==============================================================================
 # ====  New License Application   =================
 class First_License_Application(models.Model):
@@ -165,6 +167,8 @@ class Validate(models.Model):
   date_issued = models.DateTimeField(auto_now_add=True, null=True)
   def __str__(self):
         return str(str(self.application) + " | " + self.validation_status)
+
+
 
 
 

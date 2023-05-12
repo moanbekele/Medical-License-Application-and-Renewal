@@ -3,11 +3,13 @@ from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+
 #---- DRYS ----
 dropdown = {
             'type':'text',
             'class':'custom'
             }
+
 serial_num = {
             'type':'text',
             'placeholder':'Put in your serial Number'
