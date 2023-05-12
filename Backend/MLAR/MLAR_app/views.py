@@ -151,11 +151,15 @@ def renewal_success(request):
 #================================
 @login_required(login_url='login')
 def dashboard_home(request):
-    dynamic_stuff = "dummy"
+    first_license = First_License_Application.objects.all()
+    lost_license = Regain_lost_license.objects.all()
+    renew_license = Renew_last_license.objects.all()
     context = {    # Add dynamic stuff here
-        'dynamic_stuff':dynamic_stuff,
+        'first_license':first_license,
+        'lost_license':lost_license,
+        'renew_license':renew_license,
     }
-    return render(request,"Dashboard/index.html", context)
+    return render(request,"Dashboard/Verify_Applicants.html", context)
 
 #================================
 #== Accepted Applicants =========
