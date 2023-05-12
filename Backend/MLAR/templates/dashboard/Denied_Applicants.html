@@ -123,7 +123,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">OHO</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -242,54 +242,33 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{% static 'Dashboard_assets/assets/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
+                    {{request.user}}
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
                       <a class="dropdown-item" href="#">
+                        
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{% static 'Dashboard_assets/assets/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block">{{request.user}}</span>
+                            <small class="text-muted">Employee</small>
                           </div>
                         </div>
                       </a>
                     </li>
+                   
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="/logout/">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -334,163 +313,221 @@
 
 
 
+
+                      {% for fl_1 in first_license %} 
+                      {% if fl_1.validation_status == 'Declined' %}
                       <!--=========================================================================================-->
                       <!------Table-Row START------>
                       <!--=========================================================================================-->
                       <tr>
-                        <td><i class="badge bg-label-success me-1"></i> <strong>Abebe Chane</strong>
-                        <!--=========================================================================================-->
+                        <td><i class="badge bg-label-success me-1"></i>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Applicant Photo"
+                            >
+                            <a href="{{ fl_1.recent_photo.url }}" target="_blank"><img src="{{ fl_1.recent_photo.url }}" alt="Avatar" /></a>
+                            </li>
+                          </ul>
+                          <strong>{{fl_1.applicant.first_name}} {{fl_1.applicant.middle_name}}</strong></td>
+                        <td><span class="badge bg-label-danger me-1">{{fl_1.validation_status}}</span>
+                        
+                      <!--=========================================================================================-->
                       <!------Modal START------>
                       <!--=========================================================================================-->
 
-                      <div class="mt-3">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backDropModal">
-                           View <i class='bx bx-right-arrow-alt'></i>
-                        </button>
-                        
-        
-                        <!-- Modal -->
-                        <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
-                         
-                          
-                          <div class="modal-dialog modal-xl" role="document">
-                            <form class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="backDropModalTitle">Verify</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                
-                                <div class="row">
-                                  
-                                  
-        
-                                                      
-                                </div>
-                                <div class="row g-2">
-                                  <div class="col mb-0">
-                                    <div>
-                                      <div class="image-slider">
-                                          <div >
-                                              <img class="maboy"src=
-                                                      "assets/img/avatars/CER.jpg"
-                                                      alt="GFG_Image"/>
-                                          </div>
-                                         
-                                              <img class="maboy" src=
-                                                        "assets/img/avatars/CER1.png"
-                                                      alt="GFG_Image"/>
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <div class="image-slider">
-                                          <div >
-                                              <img class="maboy"src=
-                                                      "assets/img/avatars/Deploma.jpg"
-                                                      alt="GFG_Image"/>
-                                          </div>
-                                         
-                                              <img class="maboy" src=
-                                                        "assets/img/avatars/Degree.jpg"
-                                                      alt="GFG_Image"/>
-                                      </div>
-                                    </div>
+                          <div class="mt-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backDropModal_first_{{fl_1.id}}">
+                              <i class='bx bxs-user-check'></i> Verify
+                            </button>
+                            
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="backDropModal_first_{{fl_1.id}}" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
+                             
+                              
+                              <div class="modal-dialog modal-xl" role="document">
+                                <form class="modal-content" action="{% url 'checker' fr='denied' type='first' ve=fl_1.id %}"   method="POST" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="backDropModalTitle">Verify</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
-                                  <div class="col mb-0">
-        
-                                    <div class="card-body">
-                                      <small class="text-light fw-semibold">Description</small>
-                                      <dl class="row mt-2">
-        
-                                       <dt class="col-sm-3"> <u>Personal Info</u></dt>
-                                        <dd class="col-sm-9">
-                                          <dl class="row">
-                                            <dt class="col-sm-3">Name :</dt>
-                                            <dd class="col-sm-9">Abebe Chane Hopa </dd>
-                                            <dt class="col-sm-3">Age :</dt>
-                                            <dd class="col-sm-9">34</dd>
-                                            <dt class="col-sm-3">Gender :</dt>
-                                            <dd class="col-sm-9">Male</dd>
-                                            <dt class="col-sm-3">Email :</dt>
-                                            <dd class="col-sm-9">abebe@gmail.com</dd>
-                                            <dt class="col-sm-3">Phone :</dt>
-                                            <dd class="col-sm-9"><mark>+(251)991144771</mark></dd>
-                                          </dl>
-                                        </dd>   
-                                        
-                                        
-                                        
-                                            <dt class="col-sm-3">License Type :</dt>
-                                            <dd class="col-sm-9">Health Officer </dd>
-                                            <dt class="col-sm-3">Health Field :</dt>
-                                            <dd class="col-sm-9">Doctor</dd>
-                                            <dt class="col-sm-3">Graduated at :</dt>
-                                            <dd class="col-sm-9">2011  <small class="text-light fw-semibold">Gorgorean Calendar</small></dd>
-                                            <dt class="col-sm-3">University :</dt>
-                                            <dd class="col-sm-9">Addis Ababa Institue for Medical Science</dd>        
-                                      </dl>
-                                    </div>
+                                  <div class="modal-body">
+                                    
+                                    <div class="row">
                                       
-                                      <hr class="m-0">
-                                      <div class="card">
-                                        <h5 class="card-header">Verification</h5>
+                                      
+            
+                                                          
+                                    </div>
+                                    <div class="row g-2">
+                                      <div class="col mb-0">
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ fl_1.degree_certificate.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/degree.jpg' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ fl_1.grade_12th_ministry.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/12.png' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col mb-0">
+            
                                         <div class="card-body">
-                                          
-                                          <div class="row g-2">
-                                            <div class="col mb-0">
-                                              <div class="form-check mt-3">
-                                                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio1">
-                                                <label class="form-check-label" for="defaultRadio1"><h5 class="text-success fw-semibold">Accept</h5></label>
-                                              </div>
-                                            </div>
+                                          <small class="text-light fw-semibold">Description</small>
+                                          <dl class="row mt-2">
+            
+                                           <dt class="col-sm-3"> <u>Personal Info</u></dt>
+                                            <dd class="col-sm-9">
+                                              <dl class="row">
+                                                <dt class="col-sm-3">Name :</dt>
+                                                
+                                                <dd class="col-sm-9">{{fl_1.applicant.first_name}} {{fl_1.applicant.middle_name}} {{fl_1.applicant.last_name}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{fl_1.applicant.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Birth Date :</dt>
+                                                <dd class="col-sm-9">{{fl_1.applicant.birth_date}}</dd>
+                                                <dt class="col-sm-3">Gender :</dt>
+                                                <dd class="col-sm-9">{{fl_1.applicant.gender}}</dd>
+                                                <dt class="col-sm-3">Email :</dt>
+                                                <dd class="col-sm-9">{{fl_1.applicant.email}}</dd>
+                                                <dt class="col-sm-3">Phone :</dt>
+                                                <dd class="col-sm-9"><mark>{{fl_1.applicant.phone}}</mark></dd>
+                                              </dl>
+                                            </dd>   
                                             
-                                            <div class="col mb-0">
-                                              <div class="mb-3">
-                                                <div class="form-check mt-3">
-                                                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio1">
-                                                  <label class="form-check-label" for="defaultRadio1"><h5 class="text-danger fw-semibold"> Decline </h5></label>
-                                                </div>
-                                                <div class="mb-3">
-                                                  <label for="defaultSelect" class="form-label">Reason</label> <small class="text-light fw-semibold">For Denying</small>
-                                                  <select id="defaultSelect" class="form-select">
-                                                    <option>Select Reason</option>
-                                                    <option value="1">Low Quality Documents</option>
-                                                    <option value="2">Invalid Credentials</option>
-                                                    <option value="3">Forged Documents</option>
-                                                  </select>
-                                                </div>
-                                              </div>
+                                            
+                                                <dt class="col-sm-3">Service Type :</dt>
+                                                <dd class="col-sm-9">New License</dd>
+                                                <dt class="col-sm-3">License Type :</dt>
+                                                <dd class="col-sm-9">{{fl_1.health_profession}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{fl_1.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Graduated at :</dt>
+                                                <dd class="col-sm-9">{{fl_1.applicant.year_of_graduation}}  <small class="text-light fw-semibold">Gorgorean Calendar</small></dd>
+                                                <dt class="col-sm-3">University :</dt> 
+                                                <dd class="col-sm-9">{{fl_1.applicant.grad_university}}</dd>        
+                                          </dl>
+                                        </div>
+                                          
+                                        <hr class="m-0">
+                                        <div class="card">
+                                          <h5 class="card-header">Verification</h5>
+                                          <div class="card-body">
+
 
                                              
-                                            </div>
+                                              <div class="row g-2">
+                                                <div class="col mb-0">
+                                                  <div class="form-check mt-3">
+                                                    <input name="validation_status" class="form-check-input" type="radio" value="Accepted" id="defaultRadio1" required>
+                                                    <label class="form-check-label" for="defaultRadio1"><h5 class="text-success fw-semibold">Accept</h5></label>
+                                                  </div>
+                                                </div>
+                                                
+                                                <div class="col mb-0">
+                                                  <div class="mb-3">
+                                                    <div class="form-check mt-3">
+                                                      <input name="validation_status" class="form-check-input" type="radio" value="Declined" id="defaultRadio1" checked>
+                                                      <label class="form-check-label" for="defaultRadio1"><h5 class="text-danger fw-semibold"> Decline </h5></label>
+                                                    </div>
+                                                    <div class="mb-3"> 
+                                                      <label for="defaultSelect"  class="form-label">Reason</label> <small class="text-light fw-semibold">For Denying</small>
+                                                      <select id="defaultSelect" name="declination_reason" class="form-select">
+                                                        <option value="{{fl_1.declination_reason}}">{{lo_1.declination_reason}}</option>
+                                                        <option value="__NOT Stated__">Select Reason</option>
+                                                        <option value="Low Quality Documents">Low Quality Documents</option>
+                                                        <option value="Invalid Credentials">Invalid Credentials</option>
+                                                        <option value="Suspicion of Forgery">Suspicion of Forgery</option>
+                                                      </select>
+                                                    </div>
+                                                  </div>
+    
+                                                
+                                                </div>
+                                              </div>
+                                            
                                           </div>
-                                          
+                                            <hr class="m-0">
                                         </div>
-                                        <hr class="m-0">
+                                      </div>
                                     </div>
+            
+                                    
                                   </div>
-                                </div>
-        
-                                
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                      Close
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                  </div>
+                                </form>
                               </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                  Close
-                                </button>
-                                <button type="button" class="btn btn-primary">Save</button>
-                              </div>
-                            </form>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                  <!--=========================================================================================-->
-                  <!------Modal START------>
-                  <!--=========================================================================================-->
+                      <!--=========================================================================================-->
+                      <!------Modal START------>
+                      <!--=========================================================================================-->
+
+                        
                         </td>
-                        <td><span class="badge bg-label-danger me-1">Denied</span></td>
-                        <td><span class="badge bg-label-danger me-1"> <strong>Low Quality Documents</strong></span></td>
-                        <td>pharmaceutical</td>
+                        <td><span class="badge bg-label-danger me-1"> <strong>{{fl_1.declination_reason}}</strong></span> </td>
+                        <td>New License</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(8th)National-Examination-Certificate"
+                            >
+                            <a href="{{ fl_1.grade_8th_ministry.url }}" target="_blank"><img src="{{ fl_1.grade_8th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(12th)National-Examination-Certificate"
+                            >
+                              <a href="{{ fl_1.grade_12th_ministry.url }}" target="_blank"><img src="{{ fl_1.grade_12th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Degree"
+                            >
+                            <a href="{{ fl_1.degree_certificate.url }}" target="_blank"><img src="{{ fl_1.degree_certificate.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                          </ul>
+                        </td>
+                        
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -513,168 +550,233 @@
                       <!--=====================================================================================================-->
                       <!------Table-Row END------>
                       <!--=====================================================================================================-->
+                      {% endif %}
+                      {% endfor %}
 
 
 
 
+
+
+
+
+
+
+
+                      {% for lo_1 in lost_license %} 
+                      {% if lo_1.validation_status == 'Declined' %}
                       <!--=========================================================================================-->
                       <!------Table-Row START------>
                       <!--=========================================================================================-->
                       <tr>
-                        <td><i class="badge bg-label-success me-1"></i> <strong>Abebe Chane</strong>
-                        <!--=========================================================================================-->
+                        <td><i class="badge bg-label-success me-1"></i>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Applicant Photo"
+                            >
+                            <a href="{{ lo_1.recent_photo.url }}" target="_blank"><img src="{{ lo_1.recent_photo.url }}" alt="Avatar" /></a>
+                            </li>
+                          </ul>
+                          <strong>{{lo_1.applicant.first_name}} {{lo_1.applicant.middle_name}}</strong></td>
+                        <td><span class="badge bg-label-danger me-1">{{lo_1.validation_status}}</span>
+                        
+                      <!--=========================================================================================-->
                       <!------Modal START------>
                       <!--=========================================================================================-->
 
-                      <div class="mt-3">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backDropModal">
-                           View <i class='bx bx-right-arrow-alt'></i>
-                        </button>
-                        
-        
-                        <!-- Modal -->
-                        <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
-                         
-                          
-                          <div class="modal-dialog modal-xl" role="document">
-                            <form class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="backDropModalTitle">Verify</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                
-                                <div class="row">
-                                  
-                                  
-        
-                                                      
-                                </div>
-                                <div class="row g-2">
-                                  <div class="col mb-0">
-                                    <div>
-                                      <div class="image-slider">
-                                          <div >
-                                              <img class="maboy"src=
-                                                      "assets/img/avatars/CER.jpg"
-                                                      alt="GFG_Image"/>
-                                          </div>
-                                         
-                                              <img class="maboy" src=
-                                                        "assets/img/avatars/CER1.png"
-                                                      alt="GFG_Image"/>
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <div class="image-slider">
-                                          <div >
-                                              <img class="maboy"src=
-                                                      "assets/img/avatars/Deploma.jpg"
-                                                      alt="GFG_Image"/>
-                                          </div>
-                                         
-                                              <img class="maboy" src=
-                                                        "assets/img/avatars/Degree.jpg"
-                                                      alt="GFG_Image"/>
-                                      </div>
-                                    </div>
+                          <div class="mt-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backDropModal_lost_{{lo_1.id}}">
+                              <i class='bx bxs-user-check'></i> Verify 
+                            </button>
+                            
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="backDropModal_lost_{{lo_1.id}}" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
+                             
+                              
+                              <div class="modal-dialog modal-xl" role="document">
+                                <form class="modal-content" action="{% url 'checker' fr='denied' type='lost' ve=lo_1.id %}"   method="POST" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="backDropModalTitle">Verify</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
-                                  <div class="col mb-0">
-        
-                                    <div class="card-body">
-                                      <small class="text-light fw-semibold">Description</small>
-                                      <dl class="row mt-2">
-        
-                                       <dt class="col-sm-3"> <u>Personal Info</u></dt>
-                                        <dd class="col-sm-9">
-                                          <dl class="row">
-                                            <dt class="col-sm-3">Name :</dt>
-                                            <dd class="col-sm-9">Abebe Chane Hopa </dd>
-                                            <dt class="col-sm-3">Age :</dt>
-                                            <dd class="col-sm-9">34</dd>
-                                            <dt class="col-sm-3">Gender :</dt>
-                                            <dd class="col-sm-9">Male</dd>
-                                            <dt class="col-sm-3">Email :</dt>
-                                            <dd class="col-sm-9">abebe@gmail.com</dd>
-                                            <dt class="col-sm-3">Phone :</dt>
-                                            <dd class="col-sm-9"><mark>+(251)991144771</mark></dd>
-                                          </dl>
-                                        </dd>   
-                                        
-                                        
-                                        
-                                            <dt class="col-sm-3">License Type :</dt>
-                                            <dd class="col-sm-9">Health Officer </dd>
-                                            <dt class="col-sm-3">Health Field :</dt>
-                                            <dd class="col-sm-9">Doctor</dd>
-                                            <dt class="col-sm-3">Graduated at :</dt>
-                                            <dd class="col-sm-9">2011  <small class="text-light fw-semibold">Gorgorean Calendar</small></dd>
-                                            <dt class="col-sm-3">University :</dt>
-                                            <dd class="col-sm-9">Addis Ababa Institue for Medical Science</dd>        
-                                      </dl>
-                                    </div>
+                                  <div class="modal-body">
+                                    
+                                    <div class="row">
                                       
-                                      <hr class="m-0">
-                                      <div class="card">
-                                        <h5 class="card-header">Verification</h5>
+                                      
+            
+                                                          
+                                    </div>
+                                    <div class="row g-2">
+                                      <div class="col mb-0">
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ lo_1.first_license.degree_certificate.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/degree.jpg' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ lo_1.first_license.grade_12th_ministry.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/12.png' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col mb-0">
+            
                                         <div class="card-body">
-                                          
-                                          <div class="row g-2">
-                                            <div class="col mb-0">
-                                              <div class="form-check mt-3">
-                                                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio1">
-                                                <label class="form-check-label" for="defaultRadio1"><h5 class="text-success fw-semibold">Accept</h5></label>
-                                              </div>
-                                            </div>
+                                          <small class="text-light fw-semibold">Description</small>
+                                          <dl class="row mt-2">
+            
+                                           <dt class="col-sm-3"> <u>Personal Info</u></dt>
+                                            <dd class="col-sm-9">
+                                              <dl class="row">
+                                                <dt class="col-sm-3">Name :</dt>
+                                                
+                                                <dd class="col-sm-9">{{lo_1.applicant.first_name}} {{lo_1.applicant.middle_name}} {{lo_1.applicant.last_name}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{lo_1.applicant.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Birth Date :</dt>
+                                                <dd class="col-sm-9">{{lo_1.applicant.birth_date}}</dd>
+                                                <dt class="col-sm-3">Gender :</dt>
+                                                <dd class="col-sm-9">{{lo_1.applicant.gender}}</dd>
+                                                <dt class="col-sm-3">Email :</dt>
+                                                <dd class="col-sm-9">{{lo_1.applicant.email}}</dd>
+                                                <dt class="col-sm-3">Phone :</dt>
+                                                <dd class="col-sm-9"><mark>{{lo_1.applicant.phone}}</mark></dd>
+                                              </dl>
+                                            </dd>   
                                             
-                                            <div class="col mb-0">
-                                              <div class="mb-3">
-                                                <div class="form-check mt-3">
-                                                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio1">
-                                                  <label class="form-check-label" for="defaultRadio1"><h5 class="text-danger fw-semibold"> Decline </h5></label>
-                                                </div>
-                                                <div class="mb-3">
-                                                  <label for="defaultSelect" class="form-label">Reason</label> <small class="text-light fw-semibold">For Denying</small>
-                                                  <select id="defaultSelect" class="form-select">
-                                                    <option>Select Reason</option>
-                                                    <option value="1">Low Quality Documents</option>
-                                                    <option value="2">Invalid Credentials</option>
-                                                    <option value="3">Forged Documents</option>
-                                                  </select>
-                                                </div>
-                                              </div>
+                                            
+                                                <dt class="col-sm-3">Service Type :</dt>
+                                                <dd class="col-sm-9">Lost License</dd>
+                                                <dt class="col-sm-3">License Type :</dt>
+                                                <dd class="col-sm-9">{{lo_1.first_license.health_profession}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{lo_1.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Graduated at :</dt>
+                                                <dd class="col-sm-9">{{lo_1.applicant.year_of_graduation}}  <small class="text-light fw-semibold">Gorgorean Calendar</small></dd>
+                                                <dt class="col-sm-3">University :</dt> 
+                                                <dd class="col-sm-9">{{lo_1.applicant.grad_university}}</dd>        
+                                          </dl>
+                                        </div>
+                                          
+                                        <hr class="m-0">
+                                        <div class="card">
+                                          <h5 class="card-header">Verification</h5>
+                                          <div class="card-body">
+
 
                                              
-                                            </div>
+                                              <div class="row g-2">
+                                                <div class="col mb-0">
+                                                  <div class="form-check mt-3">
+                                                    <input name="validation_status" class="form-check-input" type="radio" value="Accepted" id="defaultRadio1" required>
+                                                    <label class="form-check-label" for="defaultRadio1"><h5 class="text-success fw-semibold">Accept</h5></label>
+                                                  </div>
+                                                </div>
+                                                
+                                                <div class="col mb-0">
+                                                  <div class="mb-3">
+                                                    <div class="form-check mt-3">
+                                                      <input name="validation_status" class="form-check-input" type="radio" value="Declined" id="defaultRadio1" checked>
+                                                      <label class="form-check-label" for="defaultRadio1"><h5 class="text-danger fw-semibold"> Decline </h5></label>
+                                                    </div>
+                                                    <div class="mb-3"> 
+                                                      <label for="defaultSelect"  class="form-label">Reason</label> <small class="text-light fw-semibold">For Denying</small>
+                                                      <select id="defaultSelect" name="declination_reason" class="form-select">
+                                                        <option value="{{lo_1.declination_reason}}">{{lo_1.declination_reason}}</option>
+                                                        <option value="__NOT Stated__">Select Reason</option>
+                                                        <option value="Low Quality Documents">Low Quality Documents</option>
+                                                        <option value="Invalid Credentials">Invalid Credentials</option>
+                                                        <option value="Suspicion of Forgery">Suspicion of Forgery</option>
+                                                      </select>
+                                                    </div>
+                                                  </div>
+    
+                                                
+                                                </div>
+                                              </div>
+                                            
                                           </div>
-                                          
+                                            <hr class="m-0">
                                         </div>
-                                        <hr class="m-0">
+                                      </div>
                                     </div>
+            
+                                    
                                   </div>
-                                </div>
-        
-                                
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                      Close
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                  </div>
+                                </form>
                               </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                  Close
-                                </button>
-                                <button type="button" class="btn btn-primary">Save</button>
-                              </div>
-                            </form>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                  <!--=========================================================================================-->
-                  <!------Modal START------>
-                  <!--=========================================================================================-->
+                      <!--=========================================================================================-->
+                      <!------Modal START------>
+                      <!--=========================================================================================-->
+
+                        
                         </td>
-                        <td><span class="badge bg-label-danger me-1">Denied</span></td>
-                        <td><span class="badge bg-label-danger me-1"> <strong>Low Quality Documents</strong></span></td>
-                        <td>pharmaceutical</td>
-                        <td>Medicine</td>   
+                        <td><span class="badge bg-label-danger me-1"> <strong>{{lo_1.declination_reason}}</strong></span> </td>
+                        <td>Lost License</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(8th)National-Examination-Certificate"
+                            >
+                            <a href="{{ lo_1.first_license.grade_8th_ministry.url }}" target="_blank"><img src="{{ lo_1.first_license.grade_8th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(12th)National-Examination-Certificate"
+                            >
+                              <a href="{{ lo_1.first_license.grade_12th_ministry.url }}" target="_blank"><img src="{{ lo_1.first_license.grade_12th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Degree"
+                            >
+                            <a href="{{ lo_1.first_license.degree_certificate.url }}" target="_blank"><img src="{{ lo_1.first_license.degree_certificate.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                          </ul>
+                        </td>
+                        
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -697,10 +799,267 @@
                       <!--=====================================================================================================-->
                       <!------Table-Row END------>
                       <!--=====================================================================================================-->
+                      {% endif %}
+                      {% endfor %}
 
 
 
 
+
+
+
+
+
+
+
+                      
+
+
+
+
+
+
+
+
+
+                      {% for re_1 in renew_license %} 
+                      {% if re_1.validation_status == 'Declined' %}
+                      <!--=========================================================================================-->
+                      <!------Table-Row START------>
+                      <!--=========================================================================================-->
+                      <tr>
+                        <td><i class="badge bg-label-success me-1"></i>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                          <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Applicant Photo"
+                            >
+                            <a href="{{ re_1.recent_photo.url }}" target="_blank"><img src="{{ re_1.recent_photo.url }}" alt="Avatar" /></a>
+                            </li>
+                          </ul>
+                          <strong>{{re_1.applicant.first_name}} {{re_1.applicant.middle_name}}</strong></td>
+                        <td><span class="badge bg-label-danger me-1">{{re_1.validation_status}}</span>
+                        
+                      <!--=========================================================================================-->
+                      <!------Modal START------>
+                      <!--=========================================================================================-->
+
+                          <div class="mt-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#backDropModal_renew_{{re_1.id}}">
+                              <i class='bx bxs-user-check'></i> Verify 
+                            </button>
+                            
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="backDropModal_renew_{{re_1.id}}" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
+                             
+                              
+                              <div class="modal-dialog modal-xl" role="document">
+                                <form class="modal-content" action="{% url 'checker' fr='denied' type='renew' ve=re_1.id %}"   method="POST" enctype="multipart/form-data">
+                                  {% csrf_token %}
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="backDropModalTitle">Verify</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    
+                                    <div class="row">
+                                      
+                                      
+            
+                                                          
+                                    </div>
+                                    <div class="row g-2">
+                                      <div class="col mb-0">
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ re_1.first_license.degree_certificate.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/degree.jpg' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <div class="image-slider">
+                                              <div >
+                                                  <img class="maboy"src=
+                                                          "{{ re_1.first_license.grade_12th_ministry.url }}"
+                                                          alt="GFG_Image"/>
+                                              </div>
+                                             
+                                                  <img class="maboy" src=
+                                                            "{% static 'Dashboard_assets/documents/12.png' %}"
+                                                          alt="GFG_Image"/>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col mb-0">
+            
+                                        <div class="card-body">
+                                          <small class="text-light fw-semibold">Description</small>
+                                          <dl class="row mt-2">
+            
+                                           <dt class="col-sm-3"> <u>Personal Info</u></dt>
+                                            <dd class="col-sm-9">
+                                              <dl class="row">
+                                                <dt class="col-sm-3">Name :</dt>
+                                                
+                                                <dd class="col-sm-9">{{re_1.applicant.first_name}} {{re_1.applicant.middle_name}} {{re_1.applicant.last_name}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{re_1.applicant.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Birth Date :</dt>
+                                                <dd class="col-sm-9">{{re_1.applicant.birth_date}}</dd>
+                                                <dt class="col-sm-3">Gender :</dt>
+                                                <dd class="col-sm-9">{{re_1.applicant.gender}}</dd>
+                                                <dt class="col-sm-3">Email :</dt>
+                                                <dd class="col-sm-9">{{re_1.applicant.email}}</dd>
+                                                <dt class="col-sm-3">Phone :</dt>
+                                                <dd class="col-sm-9"><mark>{{re_1.applicant.phone}}</mark></dd>
+                                              </dl>
+                                            </dd>   
+                                            
+                                            
+                                                <dt class="col-sm-3">Service Type :</dt>
+                                                <dd class="col-sm-9">Renew License</dd>
+                                                <dt class="col-sm-3">License Type :</dt>
+                                                <dd class="col-sm-9">{{re_1.first_license.health_profession}} </dd>
+                                                <dt class="col-sm-3">Serial No :</dt>
+                                                <dd class="col-sm-9">{{re_1.id_serial_no}}</dd>
+                                                <dt class="col-sm-3">Graduated at :</dt>
+                                                <dd class="col-sm-9">{{re_1.applicant.year_of_graduation}}  <small class="text-light fw-semibold">Gorgorean Calendar</small></dd>
+                                                <dt class="col-sm-3">University :</dt> 
+                                                <dd class="col-sm-9">{{re_1.applicant.grad_university}}</dd>        
+                                          </dl>
+                                        </div>
+                                          
+                                        <hr class="m-0">
+                                        <div class="card">
+                                          <h5 class="card-header">Verification</h5>
+                                          <div class="card-body">
+
+
+                                             
+                                              <div class="row g-2">
+                                                <div class="col mb-0">
+                                                  <div class="form-check mt-3">
+                                                    <input name="validation_status" class="form-check-input" type="radio" value="Accepted" id="defaultRadio1" required>
+                                                    <label class="form-check-label" for="defaultRadio1"><h5 class="text-success fw-semibold">Accept</h5></label>
+                                                  </div>
+                                                </div>
+                                                
+                                                <div class="col mb-0">
+                                                  <div class="mb-3">
+                                                    <div class="form-check mt-3">
+                                                      <input name="validation_status" class="form-check-input" type="radio" value="Declined" id="defaultRadio1" checked>
+                                                      <label class="form-check-label" for="defaultRadio1"><h5 class="text-danger fw-semibold"> Decline </h5></label>
+                                                    </div>
+                                                    <div class="mb-3"> 
+                                                      <label for="defaultSelect"  class="form-label">Reason</label> <small class="text-light fw-semibold">For Denying</small>
+                                                      <select id="defaultSelect" name="declination_reason" class="form-select">
+                                                        <option value="{{re_1.declination_reason}}">{{re_1.declination_reason}}</option>
+                                                        <option value="__NOT Stated__">Select Reason</option>
+                                                        <option value="Low Quality Documents">Low Quality Documents</option>
+                                                        <option value="Invalid Credentials">Invalid Credentials</option>
+                                                        <option value="Suspicion of Forgery">Suspicion of Forgery</option>
+                                                      </select>
+                                                    </div>
+                                                  </div>
+    
+                                                
+                                                </div>
+                                              </div>
+                                            
+                                          </div>
+                                            <hr class="m-0">
+                                        </div>
+                                      </div>
+                                    </div>
+            
+                                    
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                      Close
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                      <!--=========================================================================================-->
+                      <!------Modal START------>
+                      <!--=========================================================================================-->
+
+                        
+                        </td>
+                        <td><span class="badge bg-label-danger me-1"> <strong>{{re_1.declination_reason}}</strong></span> </td>
+                        <td>Renew License</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(8th)National-Examination-Certificate"
+                            >
+                            <a href="{{ re_1.first_license.grade_8th_ministry.url }}" target="_blank"><img src="{{ re_1.first_license.grade_8th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="(12th)National-Examination-Certificate"
+                            >
+                              <a href="{{ re_1.first_license.grade_12th_ministry.url }}" target="_blank"><img src="{{ re_1.first_license.grade_12th_ministry.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Degree"
+                            >
+                            <a href="{{ re_1.first_license.degree_certificate.url }}" target="_blank"><img src="{{ re_1.first_license.degree_certificate.url }}" alt="Avatar" class="rounded-circle" /></a>
+                            </li>
+                          </ul>
+                        </td>
+                        
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      
+                      </tr>
+
+                      <!--=====================================================================================================-->
+                      <!------Table-Row END------>
+                      <!--=====================================================================================================-->
+                      {% endif %}
+                      {% endfor %}
 
                      
                     </tbody>

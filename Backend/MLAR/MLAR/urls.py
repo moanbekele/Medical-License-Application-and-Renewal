@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include  
 from MLAR_app.views import * #!!! Import views 
 from django.conf import settings  #!!! Import settings
 from django.conf.urls.static import static #!!! Import static files 
@@ -26,9 +27,11 @@ urlpatterns = [
     path('',index, name='home'), # Add index function to path
     # ---- Registration ------
     path('register/',register_new_applicants, name='register'),
+    path('register-new-license/',register_new_license, name='new'),
     path('lost-License/',register_lost_applicants, name='lost'),
     path('renewal/',register_renewal_applicants, name='renewal'),
     # ---- Success -----------
+    path('save-id/<str:ad>/',save_id, name='save_id'),
     path('registration-success/',registration_success, name='reg_success'),
     path('lost-License-success/',lost_License_success, name='lost_success'),
     path('renewal-success/',renewal_success, name='renew_success'),
@@ -39,8 +42,10 @@ urlpatterns = [
     path('dashboard/denied',dashboard_denied, name='denied'),
     path('dashboard/notify',dashboard_notify, name='notify'),
     path('dashboard/verify',dashboard_verify, name='verify'),
+    path('dashboard/verify-check/<str:fr>/<str:type>/<str:ve>',checker_verify, name='checker'),
     # ---- Authentication -----------
-    path('login/',login, name='login'),
-    path('signup/',register, name='signup'),
+    path('login/',loginpage, name='login'),
+    path('logout/',logoutuser, name='logout'),
+    path('signup/',registerPage, name='signup'),
     path('forgot-password/',forgot_password, name='forgot_pass'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static files

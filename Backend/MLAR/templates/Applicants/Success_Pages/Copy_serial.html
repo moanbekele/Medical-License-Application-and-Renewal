@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Registration Successful</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{% static 'Applicants_assets/success.css' %}">
+</head>
+<body>
+    <div class="container">
+    {% for proj_1 in applicant_unique %}
+     <h1> Welcome {{proj_1.first_name}}</h1>
+     <h3><a><b>Save Your Serial Number</b></a></h3>
+     
+     <p>{{proj_1.id_serial_no}}</p>
+    
+     <a> You have registered your personal info Successfully</a>
+     {% endfor %}
+     <button>Continue</button>
+    </div>
+ </div>
+    <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            window.location.href = "/register-new-license/";
+        });
+    </script>
+</body>
+</html>

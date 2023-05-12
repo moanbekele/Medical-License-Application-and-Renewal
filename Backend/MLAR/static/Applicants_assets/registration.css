@@ -6,13 +6,25 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+.custom{
+                position: relative;
+                height: 40px;
+                width: 100%;
+                outline: none;
+                font-size: 1rem;
+                color: #707070;
+                margin-top: 8px;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                padding: 0px 10px;
+}
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgb(130, 106, 251);
+  background: linear-gradient(to bottom right, #826afb, #40004491);
 }
 .container {
   position: relative;

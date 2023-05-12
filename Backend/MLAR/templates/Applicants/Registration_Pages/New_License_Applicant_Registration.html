@@ -11,63 +11,29 @@
   </head>
   <body>
     <section class="container">
-      <header>New License Application Form</header>
-      <form action="#" class="form">
+      <header><b>New License Application Form</b></header>
+      <form action="" method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        
         <div class="column">
-          <div class="input-box">
-            <label>First Name </label>
-            <input type="text" placeholder="First Name"required/>
-          </div>
-          <div class="input-box">
-            <label>Middle Name </label>
-            <input type="text" placeholder="Middle Name"required/>
-          </div>
-          <div class="input-box">
-            <label>Last Name </label>
-            <input type="text" placeholder="Last Name" required/>
-          </div>
-        </div>
-        <div class="gender-box">
-          <h3>Gender</h3>
-          <div class="gender-option">
-            <div class="gender">
-              <input type="radio" id="check-male" name="gender" checked />
-              <label for="check-male">Male</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-female" name="gender" />
-              <label for="check-female">Female</label>
-            </div>
-          </div>
-        </div>
 
-        <div class="column">
+          
           <div class="input-box">
-            <label>Email Address</label>
-            <input type="email" placeholder="Enter email address" required />
+            <label>Search Applicant Name </label>
+            {{form.applicant}}
           </div>
+          
           <div class="input-box">
-            <label>Birth Date</label>
-            <input type="date" placeholder="Enter birth date" required />
-          </div>
-        </div>
-        <div class="input-box">
-          <label>Phone Number</label>
-          <input type="number" placeholder="Enter phone number" required />
-        </div>
-        <div class="column">
-          <div class="input-box">
-            <label>Graduating University</label>
-            <input type="text" placeholder="Enter University"> 
-          </div>
-          <div class="input-box">
-            <label>Year of graduation</label>
-            <input type="number" name="date-of-issue" placeholder="yyyy">
+            <label>Serial Number </label>
+            {{form.id_serial_no}}
           </div>
         </div>
+        
+
+       
         <div class="input-box">
           <label> Health profession </label>
-          <input name="profession" list="health-professions" placeholder="--Select health profession--" required>
+          {{form.health_profession}}
           <datalist id="health-professions">
             <option value="Nurse">
             <option value="Health Officer"> 
@@ -83,28 +49,28 @@
         <div class="column">
           <div class="input-box">
             <label> Upload 8th grade ministry</label>
-            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*">
+            {{form.grade_8th_ministry}}
           </div>
           <div class="input-box">
             <label> Upload 10th grade matric</label>
-            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+            {{form.grade_10th_ministry}}
           </div>
         </div>
         <div class="column">
           <div class="input-box">
             <label> Upload 12th grade matric</label>
-            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+            {{form.grade_12th_ministry}}
           </div>
           <div class="input-box">
             <label> Upload Degree certificate</label>
-            <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+            {{form.degree_certificate}}
           </div>
        </div>
        <div class="input-box">
         <label> Upload Recent Photo</label>
-        <input type="file" id="choose-file_1" name="choose-file_1" accept="image/*" required>
+        {{form.recent_photo}}
        </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </section>
   </body>
