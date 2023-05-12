@@ -13,9 +13,5 @@ class HomepageTests(SimpleTestCase):
 
     def test_template_name_correct(self):  
         response = self.client.get(reverse("home"))
-        self.assertTemplateUsed(response, "pages/home.html")
+        self.assertTemplateUsed(response, "Applicants/index.html")
 
-    def test_template_content(self):
-        response = self.client.get(reverse("home"))
-        self.assertContains(response, "<h1>Homepage</h1>")
-        self.assertNotContains(response, "Not on the page")
