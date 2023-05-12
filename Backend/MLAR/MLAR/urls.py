@@ -37,7 +37,7 @@ urlpatterns = [
     path('renewal-success/',renewal_success, name='renew_success'),
 
     # !!! -------------- DASHBOARD ------------------------------------------------
-    path('dashboard/verify',dashboard_home, name='dashboard'),
+    path('dashboard/',dashboard_home, name='dashboard'),
     path('dashboard/accepted',dashboard_accepted, name='accepted'),
     path('dashboard/denied',dashboard_denied, name='denied'),
     path('dashboard/notify',dashboard_notify, name='notify'),
