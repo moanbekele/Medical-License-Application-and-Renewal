@@ -1,0 +1,68 @@
+
+To change the default select box for foreign key fields in Django admin to a search autocomplete, like search object, you can use the django-autocomplete-light library. Here are the steps to follow:
+
+1. Install django-autocomplete-light using pip:
+
+   ```bash
+   pip install django-autocomplete-light
+   ```
+
+2. In your models.py file, add a `__str__` method to each model that you want to be searchable:
+
+   ```python
+   class MyModel(models.Model):
+        name = models.CharField(max_length=100)
+
+        def __str__(self):
+            return self.name
+   ```
+
+3. Add `autocomplete_light` to your INSTALLED_APPS in settings.py:
+
+   ```python
+   INSTALLED_APPS = (
+       ...
+       'autocomplete_light',
+       ...
+   )
+   ```
+
+4. Create a ModelForm for each model that you want to have a search autocomplete for:
+
+   ```python
+   from autocomplete_light import shortcuts as autocomplete_light
+
+   class MyModelForm(autocomplete_light.ModelForm):
+       class Meta:
+           model = MyModel
+           fields = '__all__'
+   ```
+
+5. In your admin.py file, define a custom form for the related model:
+
+   ```python
+   from django.contrib import admin
+   from django.db import models
+   from autocomplete_light import shortcuts as autocomplete_light
+
+   from .models import MyModel
+
+   class RelatedModelAdmin(admin.ModelAdmin):
+       form = autocomplete_light.modelform_factory(MyModel)
+
+   admin.site.register(RelatedModel, RelatedModelAdmin)
+   ```
+
+6. Finally, in the admin.py file for the model with the foreign key field, define the formfield_overrides to use the RelatedModelAdmin form:
+
+   ```python
+   class MyModelAdmin(admin.ModelAdmin):
+       formfield_overrides = {
+           models.ForeignKey: {'form_class': autocomplete_light.ChoiceWidget},
+       }
+   ```
+
+That's it! Now you should see a search autocomplete field instead of a select box when you select the foreign key field in the admin interface.
+
+Created by https://GPTGO.ai
+				#gptgo #chatgpt #freechatgpt #chatgptfree

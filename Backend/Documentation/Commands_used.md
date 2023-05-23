@@ -20,7 +20,9 @@
   - `python manage.py createsuperuser` Create Super User
 
 > ## pip install
+  - `pip install django` Django
   - `pip install Pillow` Pillow
-  
+  - `pip install django-autocomplete-light` Stylized Form
+
 > ## Testing
   - `python manage.py test` test
