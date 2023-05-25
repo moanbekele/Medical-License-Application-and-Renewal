@@ -6,17 +6,30 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.select2-container--default .select2-selection--single  {
+  position: relative !important;
+  height: 40px !important;
+  width: 100% !important;
+  outline: none !important;
+  font-size: 1rem !important;
+  color: #707070 !important;
+  margin-top: 8px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  padding: 0px 10px !important;
+}
 .custom{
-                position: relative;
-                height: 40px;
-                width: 100%;
-                outline: none;
-                font-size: 1rem;
-                color: #707070;
-                margin-top: 8px;
-                border: 1px solid #ddd;
-                border-radius: 6px;
-                padding: 0px 10px;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0px 10px;
 }
 body {
   min-height: 100vh;

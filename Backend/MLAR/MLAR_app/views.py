@@ -5,8 +5,10 @@ from django.contrib.auth import authenticate, login, logout  # Registration Logi
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-import os 
 
+import json
+
+from django.http import JsonResponse
 # Create your views here.
 # !!!---------------- Applicants START-------------------------------------------------!!!
 
@@ -48,7 +50,12 @@ def register_new_applicants(request):
 
 
 def register_new_license(request):
-
+    form = First_License_ApplicationForm(instance=First_License_Application.objects.first())
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': 
+        term = request.GET.get('term')
+        applicants = Applicant.objects.all().filter(title__icontains=term)
+        return JsonResponse(list(applicants.values()), safe=False)
+    
     if request.method == 'POST':
         form = First_License_ApplicationForm(request.POST, request.FILES)
 
@@ -62,7 +69,15 @@ def register_new_license(request):
 #== Lost License Registration ====
 #=================================
 def register_lost_applicants(request):
-
+    
+    form = Regain_lost_licenseForm()
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': 
+        term = request.GET.get('term')
+        applicants = Applicant.objects.all().filter(title__icontains=term)
+        response_content = list(applicants.values())
+        print(response_content)
+        return JsonResponse(list(applicants.values()), safe=False)
+    
     if request.method == 'POST':
         form = Regain_lost_licenseForm(request.POST, request.FILES)
 
@@ -77,7 +92,12 @@ def register_lost_applicants(request):
 #== Renewal Registration ========
 #================================
 def register_renewal_applicants(request):
-
+    form = Renew_last_licenseForm(instance=Renew_last_license.objects.first())
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest': 
+        term = request.GET.get('term')
+        applicants = Applicant.objects.all().filter(title__icontains=term)
+        return JsonResponse(list(applicants.values()), safe=False)
+    
     if request.method == 'POST':
         form = Renew_last_licenseForm(request.POST, request.FILES)
 

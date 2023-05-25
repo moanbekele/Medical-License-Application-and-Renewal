@@ -23,6 +23,7 @@ from django.conf.urls.static import static #!!! Import static files
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('select2/', include('django_select2.urls')),
     # !!! -------------- APPLICANTS ------------------------------------------------
     path('',index, name='home'), # Add index function to path
     # ---- Registration ------
@@ -37,7 +38,7 @@ urlpatterns = [
     path('renewal-success/',renewal_success, name='renew_success'),
 
     # !!! -------------- DASHBOARD ------------------------------------------------
-    path('dashboard/verify',dashboard_home, name='dashboard'),
+    path('dashboard/',dashboard_verify, name='dashboard'),
     path('dashboard/accepted',dashboard_accepted, name='accepted'),
     path('dashboard/denied',dashboard_denied, name='denied'),
     path('dashboard/notify',dashboard_notify, name='notify'),

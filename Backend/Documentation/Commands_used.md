@@ -22,7 +22,7 @@
 > ## pip install
   - `pip install django` Django
   - `pip install Pillow` Pillow
-  - `pip install django-autocomplete-light` Stylized Form
+  - `pip install django-select2` Stylized Form
 
 > ## Testing
   - `python manage.py test` test

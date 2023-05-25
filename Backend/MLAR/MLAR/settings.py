@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Add MLAR app in to installed apps
     'MLAR_app',
-    'autocomplete_light',
+    # 'django-select2',
 ]
 
 MIDDLEWARE = [
