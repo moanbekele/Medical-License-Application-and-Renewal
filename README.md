@@ -5,7 +5,7 @@
 
 > ## Envirenoment Setup
  - `python -m venv MLAR_env` Setup environment
- - `.\MLAR_env\scripts\activate- Run Virtual enviroment
+ - `.\MLAR_env\scripts\activate` Run Virtual enviroment
  
 > ## PIP-Installiation
  -  `pip install -r requirements.txt` Install all pip dependencies 
