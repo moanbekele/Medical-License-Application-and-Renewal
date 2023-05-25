@@ -1,6 +1,7 @@
 # Medical Licence Application & Renewal
 
 # Installiation
+* Change directory to `Backen/MLAR` in terminal
 > ## Envirenoment Setup
  - `python -m venv MLAR_env` Setup environment
  - `.\MLAR_env\scripts\activate` Run Virtual enviroment
