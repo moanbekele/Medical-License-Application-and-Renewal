@@ -8,7 +8,7 @@ class HomepageTests(SimpleTestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_url_available_by_name(self):  
-        response = self.client.get(reverse("home"))
+        response = self.client.get(reverse("home1"))
         self.assertEqual(response.status_code, 200)
 
     def test_template_name_correct(self):  
