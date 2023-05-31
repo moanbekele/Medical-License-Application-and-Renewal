@@ -26,16 +26,16 @@
 ### A. Home
 ![http://www.adhamdannaway.com](images/Home.jpg)
 ### B. Applicants Registration
-<img src="images/New.jpg" alt= “” width="500px" height="300px">
+<img src="images/New.jpg" alt= “” width="700px" height="400px">
 
 ### C. New License
-<img src="images/new_lice.jpg" alt= “” width="500px" height="300px">
+<img src="images/new_lice.jpg" alt= “” width="700px" height="400px">
 
 ### D. Renew License
-<img src="images/Renew.jpg" alt= “” width="500px" height="300px">
+<img src="images/Renew.jpg" alt= “” width="700px" height="400px">
 
 ### E. Register Lost Licence
-<img src="images/Lost.jpg" alt= “” width="500px" height="300px">
+<img src="images/Lost.jpg" alt= “” width="700px" height="400px">
 
 > # Dashboard
 ### A. Verifi(Home)
@@ -45,11 +45,11 @@
 ![alt text](images/Verify.gif)
 
 ### C. Login
-![Login](images/login.gif.gif)
-<img src="images/Reg.jpg" alt= “Registration” width="500px" height="300px">
+![Login](images/login.gif)
+<img src="images/Reg.jpg" alt= “Registration” >
 
 ### D. Denied License
-<img src="images/Denied.jpg" alt= “” width="500px" height="300px">
+<img src="images/Denied.jpg" alt= “” >
 
 
 
