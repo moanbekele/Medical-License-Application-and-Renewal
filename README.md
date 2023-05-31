@@ -19,3 +19,38 @@
   # Tests
  > ## Testing
   - `python manage.py test` Tests
+
+# All Pages
+
+> # Applicants End
+### A. Home
+![http://www.adhamdannaway.com](images/Home.jpg)
+### B. Applicants Registration
+<img src="images/New.jpg" alt= “” width="500px" height="300px">
+
+### C. New License
+<img src="images/new_lice.jpg" alt= “” width="500px" height="300px">
+
+### D. Renew License
+<img src="images/Renew.jpg" alt= “” width="500px" height="300px">
+
+### E. Register Lost Licence
+<img src="images/Lost.jpg" alt= “” width="500px" height="300px">
+
+> # Dashboard
+### A. Verifi(Home)
+![alt text](images/Verfication_page.gif)
+
+### B. Verification
+![alt text](images/Verify.gif)
+
+### C. Login
+![Login](images/login.gif.gif)
+<img src="images/Reg.jpg" alt= “Registration” width="500px" height="300px">
+
+### D. Denied License
+<img src="images/Denied.jpg" alt= “” width="500px" height="300px">
+
+
+
+
