@@ -24,7 +24,7 @@
 
 > # Applicants End
 ### A. Home
-![http://www.adhamdannaway.com](images/Home.jpg)
+![http://www.adhamdannaway.com](images/Home.gif)
 ### B. Applicants Registration
 <img src="images/New.jpg" alt= “” width="700px" height="400px">
 
